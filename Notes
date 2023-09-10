@@ -1,0 +1,11 @@
+{
+  "platformName": "Android",
+  "appium:automationName": "UiAutomator2",
+  "appium:deviceName": "Android",
+  "appium:appPackage": "ru.sberbankmobile",
+  "appium:appActivity": "ru.sberbank.mobile.feature.referral.impl.presentation.views.activities.ReferralMainActivity"
+}
+
+
+
+aapt dump xmltree ./SberbankOnline.apk AndroidManifest.xml | grep 'MainActivity'
