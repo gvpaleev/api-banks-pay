@@ -4,10 +4,10 @@ const capabilities = {
   platformName: 'Android',
   'appium:automationName': 'UiAutomator2',
   'appium:deviceName': 'Android',
-  'appium:appPackage': 'com.android.settings',
-//   'appium:appPackage': 'ru.sberbankmobile',
-//   'appium:appActivity': 'ru.sberbank.moru.sberbankmobile',
-  'appium:appActivity': '.Settings',
+//   'appium:appPackage': 'com.android.settings',
+// //   'appium:appPackage': 'ru.sberbankmobile',
+// //   'appium:appActivity': 'ru.sberbank.moru.sberbankmobile',
+//   'appium:appActivity': '.Settings',
   'appium:noReset':true
 };
 
@@ -22,9 +22,15 @@ const wdOpts = {
 async function runTest() {
     const driver = await remote(wdOpts);
   try {
+
     await driver.pause(1000);
     await driver.pressKeyCode(4);
     await driver.pause(1000);
+    await driver.touchAction({
+      action: 'tap',
+      x: 188,
+      y:2552
+    })
     const sberbankApp = await driver.$('//android.widget.TextView[@content-desc="СберБанк"]');
     await sberbankApp.click();
     await driver.pause(1000);
