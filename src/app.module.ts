@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { PayMoneroModule } from './pay-monero/pay-monero.module';
 import { AuthorizationModule } from './authorization/authorization.module';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { TinkoffPayModule } from './tinkoff-pay/tinkoff-pay.module';
 
 @Module({
-  imports: [PayMoneroModule, AuthorizationModule, AuthenticationModule],
+  imports: [PayMoneroModule, AuthorizationModule, AuthenticationModule, TinkoffPayModule],
   controllers: [AppController],
   providers: [AppService],
 })
