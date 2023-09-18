@@ -104,6 +104,7 @@ async function runTest() {
     // await driver.pause(1000);
 
     
+    
     let button = await driver.$('//android.widget.FrameLayout[@content-desc="7"]/android.widget.LinearLayout');
     //Вводить ли пароль ?
     if(await button.isDisplayed()){
